@@ -1,0 +1,3 @@
+import {createServer} from 'node:http';
+const html='<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>小蓝网络测试</title><style>body{font:18px/1.8 system-ui;background:#f7fbff;color:#446078;padding:30px;max-width:600px;margin:auto}main{padding:24px;background:white;border-radius:20px}</style><main><h1>小蓝网络测试成功</h1><p>如果你关闭 Wi-Fi、使用中国移动流量后看到本页，说明这次能够访问测试服务。</p><p>这里只测试连接，尚未迁移行程，也不代表未来每次都能连接。</p></main></html>';
+createServer((req,res)=>{res.writeHead(200,{'Content-Type':'text/html;charset=utf-8','Cache-Control':'no-store'});res.end(html)}).listen(Number(process.env.PORT||3000),'0.0.0.0');
